@@ -1,11 +1,10 @@
 # study_blockchain
 
-## conda environment
-### Create conda environment to develop in the independent environment.
-``` bash
-conda create -n blockchain python=3.7
-```
-### Install requirements for ch1 in the conda env
-``` bash
-conda activate blockchain && pip install -r ch1_create_a_blockchain/requirements.txt
-```
+## Prerequisites
+- Anaconda / Miniconda
+    - For developing in the independent environment
+- [Postman](www.getpostman.com)
+    - To communicate with Blockchain
+
+## Contents
+This repository will contain the project about blockchain, crypto currency, and smart contract from the Udemy course [Blockchain A-Z](https://www.udemy.com/course/best-blockchain-az/).

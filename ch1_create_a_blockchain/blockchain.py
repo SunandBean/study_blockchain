@@ -8,4 +8,6 @@ from flask import Flask, jsonify
 
 # Part 1 - Building a Blockchain
 
+
+
 # Part 2 - Mining our Blockhcain
