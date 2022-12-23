@@ -8,3 +8,4 @@
 
 ## Contents
 This repository will contain the project about blockchain, crypto currency, and smart contract from the Udemy course [Blockchain A-Z](https://www.udemy.com/course/best-blockchain-az/).
+If it's hard to put all things in this repo, I'll divide the repo.
