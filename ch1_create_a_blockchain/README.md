@@ -1,4 +1,4 @@
-# study_blockchain
+# Ch1 Create a Blockchain
 
 ## conda environment
 ### Create conda environment to develop in the independent environment.
