@@ -22,5 +22,6 @@ contract suncoin_ico {
     // Checking if an investor can buy Suncoins
     modifier can_buy_suncoins(uint usd_invested) {
         require (usd_invested * usd_to_suncoins + total_suncoins_bought <= max_suncoins);
+        _;
     }
 }
