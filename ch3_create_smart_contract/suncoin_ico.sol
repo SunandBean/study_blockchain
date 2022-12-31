@@ -2,7 +2,7 @@
 // Suncoins ICO
 
 // Version of compiler
-pragma solidity ^0.8.17;
+pragma solidity >=0.4.11 <0.9.0;
 
 contract suncoin_ico {
 
@@ -33,5 +33,14 @@ contract suncoin_ico {
     // Getting the equity in USD of an investor
     function equity_in_usd(address investor) external constant returns (uint) {
         return equity_usd[investor];
+    }
+
+    // Buying Suncoins
+    function buy_suncoins(address investor, uint usd_invested) external 
+    can_buy_suncoins(usd_invested) {
+        uint suncoins_bought = usd_invested * usd_to_suncoins;
+        equity_in_suncoins[investor] += suncoins_bought;
+        equity_in_usd[investor] = equity_in_suncoins[investor] / 1000;
+        total_suncoins_bought += suncoins_bought;
     }
 }
