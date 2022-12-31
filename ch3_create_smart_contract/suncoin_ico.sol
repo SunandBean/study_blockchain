@@ -2,7 +2,7 @@
 // Suncoins ICO
 
 // Version of compiler
-pragma solidity >=0.4.11 <0.9.0;
+pragma solidity ^0.4.11;
 
 contract suncoin_ico {
 
@@ -24,7 +24,7 @@ contract suncoin_ico {
         require (usd_invested * usd_to_suncoins + total_suncoins_bought <= max_suncoins);
         _;
     }
-
+    
     // Getting the equity in Suncoins of an investor
     function equity_in_suncoins(address investor) external constant returns (uint) {
         return equity_suncoins[investor];
@@ -39,15 +39,15 @@ contract suncoin_ico {
     function buy_suncoins(address investor, uint usd_invested) external 
     can_buy_suncoins(usd_invested) {
         uint suncoins_bought = usd_invested * usd_to_suncoins;
-        equity_in_suncoins[investor] += suncoins_bought;
-        equity_in_usd[investor] = equity_in_suncoins[investor] / 1000;
+        equity_suncoins[investor] += suncoins_bought;
+        equity_usd[investor] = equity_suncoins[investor] / 1000;
         total_suncoins_bought += suncoins_bought;
     }
 
     // Selling Suncoins
     function sell_suncoins(address investor, uint suncoins_sold) external {
-        equity_in_suncoins[investor] -= suncoins_sold;
-        equity_in_usd[investor] = equity_in_suncoins[investor] / 1000;
+        equity_suncoins[investor] -= suncoins_sold;
+        equity_usd[investor] = equity_suncoins[investor] / 1000;
         total_suncoins_bought -= suncoins_sold;
     }    
 }
