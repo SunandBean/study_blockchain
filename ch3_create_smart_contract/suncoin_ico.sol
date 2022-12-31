@@ -24,4 +24,14 @@ contract suncoin_ico {
         require (usd_invested * usd_to_suncoins + total_suncoins_bought <= max_suncoins);
         _;
     }
+
+    // Getting the equity in Suncoins of an investor
+    function equity_in_suncoins(address investor) external constant returns (uint) {
+        return equity_suncoins[investor];
+    }
+
+    // Getting the equity in USD of an investor
+    function equity_in_usd(address investor) external constant returns (uint) {
+        return equity_usd[investor];
+    }
 }
