@@ -43,4 +43,11 @@ contract suncoin_ico {
         equity_in_usd[investor] = equity_in_suncoins[investor] / 1000;
         total_suncoins_bought += suncoins_bought;
     }
+
+    // Selling Suncoins
+    function sell_suncoins(address investor, uint suncoins_sold) external {
+        equity_in_suncoins[investor] -= suncoins_sold;
+        equity_in_usd[investor] = equity_in_suncoins[investor] / 1000;
+        total_suncoins_bought -= suncoins_sold;
+    }    
 }
